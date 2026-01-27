@@ -38,6 +38,18 @@ header {
   border-bottom:2px solid var(--accent);
 }
 
+.headerRow{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.logo{
+  height:72px;
+  width:auto;
+}
+
 header h1 {
   margin:0;
   font-size:2.2rem;
@@ -94,6 +106,7 @@ header p {
 @media(max-width:900px){
   .grid { grid-template-columns:1fr; }
   header h1 { font-size:1.9rem; }
+  .logo { height:58px; }
 }
 
 .pills {
@@ -157,7 +170,6 @@ footer {
   border-top:1px solid rgba(255,255,255,.12);
 }
 
-/* status text */
 #formStatus{
   margin-top:12px;
   color:var(--muted);
@@ -170,8 +182,13 @@ footer {
 
 <header>
   <div class="container">
-    <h1>Bateman’s Drains</h1>
-    <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
+    <div class="headerRow">
+      <img src="logo.png" alt="Bateman’s Drains Logo" class="logo">
+      <div>
+        <h1>Bateman’s Drains</h1>
+        <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
+      </div>
+    </div>
 
     <div class="nav">
       <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
@@ -205,37 +222,30 @@ footer {
       <h2 id="contact">Request Service</h2>
       <p class="small">Fill this out and we’ll call or text you shortly. For emergencies, calling is fastest.</p>
 
-      <!-- IMPORTANT:
-           We keep the same endpoint, but we DO NOT let the browser navigate away.
-           JS sends the POST via fetch(), then redirects to /thank-you.html.
-      -->
-      <form id="serviceForm" action="https://formspree.io/f/xqeqydgk" method="POST" onsubmit="return false;">
-        <input type="hidden" name="_subject" value="New Drain Service Request">
-        <input type="hidden" name="_template" value="table">
-
+      <form id="serviceForm" onsubmit="return false;">
         <div class="formGroup">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required>
+          <label>Name</label>
+          <input type="text" name="name" required>
         </div>
 
         <div class="formGroup">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@email.com" required>
+          <label>Email</label>
+          <input type="email" name="email" required>
         </div>
 
         <div class="formGroup">
-          <label for="phone">Phone</label>
-          <input id="phone" type="tel" name="phone" placeholder="779-399-0185" required>
+          <label>Phone</label>
+          <input type="tel" name="phone" required>
         </div>
 
         <div class="formGroup">
-          <label for="service_area">Service Area (City/Suburb)</label>
-          <input id="service_area" type="text" name="service_area" placeholder="Example: Gurnee / Waukegan / Arlington Heights" required>
+          <label>Service Area</label>
+          <input type="text" name="service_area" required>
         </div>
 
         <div class="formGroup">
-          <label for="urgency">Urgency</label>
-          <select id="urgency" name="urgency" required>
+          <label>Urgency</label>
+          <select name="urgency" required>
             <option value="">Select</option>
             <option>Emergency – right now</option>
             <option>Today</option>
@@ -245,20 +255,15 @@ footer {
         </div>
 
         <div class="formGroup">
-          <label for="message">Description of work needed</label>
-          <textarea id="message" name="message" placeholder="Example: basement floor drain backing up when washer runs… kitchen sink slow drain… main line clog…" required></textarea>
+          <label>Description of work needed</label>
+          <textarea name="message" required></textarea>
         </div>
 
         <div class="nav" style="margin:0;">
-          <!-- Not a submit button, so the browser never leaves your site -->
           <button id="submitBtn" class="btn btnPrimary" type="button">Send Request</button>
-          <a class="btn btnSecondary" href="tel:+17793990185">📞 Call Now</a>
+          <a class="btn btnSecondary" href="tel:+17793990185">📞 Call</a>
           <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
         </div>
-
-        <p class="small" style="margin-top:12px;">
-          By submitting, you agree we may contact you about this request.
-        </p>
 
         <p id="formStatus"></p>
       </form>
@@ -266,19 +271,12 @@ footer {
 
     <div class="card" id="area">
       <h2>Service Area Map</h2>
-      <p class="small">
-        Serving the Northern Suburbs, Lake County, and Cook County — as far south as Stickney.
-      </p>
+      <p class="small">Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
 
       <iframe
         src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        loading="lazy">
       </iframe>
-
-      <p class="small" style="margin-top:12px;">
-        Not sure if you're in range? Submit the form and we’ll confirm quickly.
-      </p>
     </div>
   </section>
 
@@ -289,47 +287,42 @@ footer {
 </div>
 
 <script>
-  // Footer year
-  document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("y").textContent = new Date().getFullYear();
 
-  // Formspree AJAX submit + redirect (works on free plan)
-  const ENDPOINT = "https://formspree.io/f/xqeqydgk";
-  const form = document.getElementById("serviceForm");
-  const btn = document.getElementById("submitBtn");
-  const statusEl = document.getElementById("formStatus");
+const ENDPOINT = "https://formspree.io/f/xqeqydgk";
+const form = document.getElementById("serviceForm");
+const btn = document.getElementById("submitBtn");
+const statusEl = document.getElementById("formStatus");
 
-  btn.addEventListener("click", async () => {
-    // HTML5 validation
-    if (!form.checkValidity()) {
-      form.reportValidity();
+btn.addEventListener("click", async () => {
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  try {
+    const res = await fetch(ENDPOINT, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (res.ok) {
+      window.location.href = "/thank-you.html";
       return;
     }
 
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-    statusEl.textContent = "";
-
-    try {
-      const res = await fetch(ENDPOINT, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      });
-
-      if (res.ok) {
-        // Your custom thank-you page
-        window.location.href = "https://batemansdrains.com/thank-you.html";
-        return;
-      }
-
-      statusEl.textContent = "Couldn’t submit right now. Please call 779-399-0185.";
-    } catch (e) {
-      statusEl.textContent = "Network error. Please call 779-399-0185.";
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Send Request";
-    }
-  });
+    statusEl.textContent = "Submission failed. Please call 779-399-0185.";
+  } catch {
+    statusEl.textContent = "Network error. Please call 779-399-0185.";
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Send Request";
+  }
+});
 </script>
 
 </body>
