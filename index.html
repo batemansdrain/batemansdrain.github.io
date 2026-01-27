@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bateman’s Drains | 24/7 Emergency Drain & Sewer Service</title>
+  <meta name="description" content="Bateman’s Drains provides fast, honest drain and sewer service. Call for 24/7 emergency drain cleaning, rodding, and camera inspections." />
+
+  <style>
+    :root {
+      --bg:#0b1220;
+      --card:#101a33;
+      --text:#e9eefc;
+      --muted:#b9c6ee;
+      --accent:#4da3ff;
+      --accent2:#57e3b4;
+      --danger:#ff4d5a;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 10px 25px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    * { box-sizing:border-box }
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(77,163,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 30%, rgba(87,227,180,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a { color:inherit; text-decoration:none }
+    .wrap { max-width:1100px; margin:0 auto; padding:22px }
+
+    /* HEADER */
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(16,26,51,.72);
+      backdrop-filter:blur(8px);
+      box-shadow:var(--shadow);
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo {
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      color:#07101f;
+    }
+    .brand h1 { margin:0; font-size:16px }
+    .brand p { margin:0; font-size:12px; color:var(--muted) }
+
+    .ctaRow {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn {
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:800;
+      border:none;
+      cursor:pointer;
+    }
+    .btnPrimary {
+      background:linear-gradient(135deg,var(--danger),#ff9a4d);
+      color:#1b0a0d;
+    }
+    .btnSecondary {
+      background:rgba(255,255,255,.1);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    /* HERO */
+    .hero {
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+    }
+    .card {
+      background:rgba(16,26,51,.55);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .hero h2 {
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+    }
+    .hero h2 span {
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead {
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:14px;
+    }
+
+    .actions {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .infoBox {
+      margin-top:14px;
+      padding:12px;
+      border:1px dashed rgba(255,255,255,.25);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* SERVICES */
+    .sectionTitle {
+      margin:30px 0 10px;
+      font-size:18px;
+    }
+    .services {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    ul {
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    li { margin:6px 0 }
+
+    /* FOOTER */
+    footer {
+      margin-top:30px;
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr }
+      .services { grid-template-columns:1fr }
+      .hero h2 { font-size:30px }
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BD</div>
+      <div>
+        <h1>Bateman’s Drains</h1>
+        <p>Drain & Sewer • Emergency Service</p>
+      </div>
+    </div>
+    <div class="ctaRow">
+      <a class="btn btnSecondary" href="#services">Services</a>
+      <a class="btn btnPrimary" href="tel:+1XXXXXXXXXX">📞 Call Now</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="card">
+      <h2><span>Clogged drain?</span><br>Sewer backing up?</h2>
+      <p class="lead">
+        Fast, honest drain & sewer service. Emergency-first response when water is on the floor.
+      </p>
+      <div class="actions">
+        <a class="btn btnPrimary" href="tel:+1XXXXXXXXXX">📞 Call / Text Now</a>
+        <a class="btn btnSecondary" href="#services">View Services</a>
+      </div>
+      <div class="infoBox">
+        <strong>Phone:</strong> (XXX) XXX-XXXX<br>
+        <strong>Service Area:</strong> Your City & Surrounding Areas<br>
+        <strong>Hours:</strong> 24/7 Emergency
+      </div>
