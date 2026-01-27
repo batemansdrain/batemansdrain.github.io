@@ -2,297 +2,334 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bateman’s Drains | 24/7 Emergency Drain & Sewer Service</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="24/7 emergency drain & sewer service across Lake County and Cook County. Fast response, honest pricing.">
+<meta name="description" content="Bateman’s Drains provides 24/7 emergency drain and sewer services across Northern Suburbs, Lake County, and Cook County (south to Stickney). Call 779-399-0185.">
 
 <style>
-:root{
+:root {
   --bg:#0b1220;
-  --panel:#111b36;
-  --accent:#2563eb;
-  --text:#e6ecff;
+  --card:#101a33;
+  --accent:#3ea6ff;
+  --text:#e9eefc;
   --muted:#9fb0d0;
-  --border:#1f2b4f;
+  --line:rgba(255,255,255,.15);
 }
 
-*{box-sizing:border-box}
-body{
+* { box-sizing:border-box; }
+
+body {
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.7;
+  line-height:1.45;
 }
 
-/* ---------- HERO ---------- */
-.hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:120px 20px;
-  background:linear-gradient(180deg,#0b1220,#0e1838);
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:24px;
 }
 
-.hero h1{
-  font-size:clamp(2.6rem,6vw,4rem);
-  margin-bottom:20px;
+header {
+  background:linear-gradient(135deg,#0b1220,#13224a);
+  border-bottom:2px solid var(--accent);
 }
 
-.hero p{
-  max-width:900px;
-  margin:0 auto 40px;
-  font-size:1.2rem;
+header h1 {
+  margin:0;
+  font-size:2.2rem;
+}
+
+header p {
+  margin:8px 0 16px;
   color:var(--muted);
 }
 
-.hero a{
+.nav {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.btn {
   display:inline-block;
-  margin:10px;
-  padding:16px 32px;
+  padding:14px 18px;
   border-radius:10px;
-  font-weight:600;
+  font-weight:bold;
   text-decoration:none;
 }
 
-.call{
+.btnPrimary {
   background:var(--accent);
-  color:#fff;
+  color:#000;
 }
 
-.quote{
+.btnSecondary {
   border:2px solid var(--accent);
-  color:#fff;
+  color:var(--accent);
+  background:transparent;
 }
 
-/* ---------- SECTIONS ---------- */
-section{
-  padding:120px 20px;
+.section {
+  margin-top:38px;
 }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-
-h2{
-  font-size:2.4rem;
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.section-desc{
-  max-width:900px;
-  margin:0 auto 80px;
-  text-align:center;
-  color:var(--muted);
-  font-size:1.15rem;
-}
-
-/* ---------- SERVICES ---------- */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:50px;
-}
-
-.card{
-  background:var(--panel);
-  padding:40px;
+.card {
+  background:var(--card);
+  padding:24px;
   border-radius:14px;
-  border:1px solid var(--border);
+  border:1px solid var(--line);
 }
 
-.card h3{
-  margin-top:0;
-  margin-bottom:15px;
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
-/* ---------- MAP ---------- */
-iframe{
+@media(max-width:900px){
+  .grid { grid-template-columns:1fr; }
+  header h1 { font-size:1.9rem; }
+}
+
+.pills {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.pill {
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+}
+
+.small {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.formGroup {
+  margin-bottom:14px;
+}
+
+.formGroup label {
+  display:block;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
   width:100%;
-  height:500px;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.25);
+  color:var(--text);
+}
+
+.formGroup textarea {
+  min-height:120px;
+  resize:vertical;
+}
+
+iframe {
+  width:100%;
+  height:420px;
   border:0;
   border-radius:14px;
-  margin-top:40px;
 }
 
-/* ---------- FORM ---------- */
-form{
-  max-width:800px;
-  margin:0 auto;
-  display:grid;
-  gap:20px;
+footer {
+  margin-top:46px;
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.12);
 }
 
-input,select,textarea{
-  padding:16px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:#0b1430;
-  color:var(--text);
-  font-size:1rem;
-}
-
-button{
-  padding:18px;
-  border-radius:12px;
-  border:none;
-  background:var(--accent);
-  color:#fff;
-  font-size:1.15rem;
-  font-weight:600;
-  cursor:pointer;
-}
-
+/* status text */
 #formStatus{
-  text-align:center;
+  margin-top:12px;
   color:var(--muted);
-  margin-top:10px;
+  font-size:13px;
 }
-
-/* ---------- FOOTER ---------- */
-footer{
-  padding:80px 20px;
-  text-align:center;
-  background:#070d1a;
-  color:var(--muted);
-}
-footer strong{color:#fff}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Bateman’s Drains</h1>
-    <p>
-      24/7 Emergency Drain & Sewer Service serving the Northern Suburbs,
-      Lake County, and Cook County. Fast response. Honest work.
-    </p>
-    <a class="call" href="tel:17793990185">Call 779-399-0185</a>
-    <a class="quote" href="#contact">Request Service</a>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section>
+<header>
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="section-desc">
-      Residential and light commercial drain and sewer solutions —
-      handled professionally and explained clearly.
-    </p>
+    <h1>Bateman’s Drains</h1>
+    <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Emergency Drain Cleaning</h3>
-        <p>Backups, slow drains, overflows — available day or night.</p>
-      </div>
-      <div class="card">
-        <h3>Sewer Line Inspections</h3>
-        <p>Camera inspections to find roots, breaks, or blockages.</p>
-      </div>
-      <div class="card">
-        <h3>Hydro Jetting</h3>
-        <p>High-pressure cleaning to restore full pipe flow.</p>
-      </div>
+    <div class="nav">
+      <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
+      <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
+      <a class="btn btnSecondary" href="#contact">Request Service</a>
+      <a class="btn btnSecondary" href="#area">Service Area</a>
+    </div>
+
+    <div class="pills">
+      <div class="pill">✅ Same-day available</div>
+      <div class="pill">✅ Residential & light commercial</div>
+      <div class="pill">✅ Clean + careful</div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- SERVICE AREA -->
-<section>
-  <div class="container">
-    <h2>Service Area</h2>
-    <p class="section-desc">
-      Serving Northern Suburbs, Lake County, and Cook County —
-      coverage extends south to the Stickney area.
+<div class="container">
+
+  <section class="section card">
+    <h2>Fast, honest help when drains stop flowing</h2>
+    <p class="small">
+      If you have water backing up, stop using water fixtures and call now. We prioritize active backups and urgent situations.
     </p>
-
-    <iframe
-      src="https://www.google.com/maps/d/embed?mid=1R9XJb4pX9cM4nKZs8&ehbc=2E312F">
-    </iframe>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <h2>Request Service</h2>
-    <p class="section-desc">
-      Submit your request below and we’ll get back to you shortly.
-      For emergencies, call anytime.
+    <p class="small">
+      Services include drain cleaning & rodding, main line backups, camera inspections, and preventive clean-outs.
     </p>
+  </section>
 
-    <form id="serviceForm" onsubmit="return false;">
-      <input name="name" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Email Address" required>
-      <input name="phone" placeholder="Phone Number" required>
-      <input name="city" placeholder="City / Suburb" required>
+  <section class="section grid">
+    <div class="card">
+      <h2 id="contact">Request Service</h2>
+      <p class="small">Fill this out and we’ll call or text you shortly. For emergencies, calling is fastest.</p>
 
-      <select name="urgency" required>
-        <option value="">Urgency</option>
-        <option>Emergency – right now</option>
-        <option>Today</option>
-        <option>1–2 days</option>
-        <option>Not urgent</option>
-      </select>
+      <!-- IMPORTANT:
+           We keep the same endpoint, but we DO NOT let the browser navigate away.
+           JS sends the POST via fetch(), then redirects to /thank-you.html.
+      -->
+      <form id="serviceForm" action="https://formspree.io/f/xqeqydgk" method="POST" onsubmit="return false;">
+        <input type="hidden" name="_subject" value="New Drain Service Request">
+        <input type="hidden" name="_template" value="table">
 
-      <textarea name="message" rows="6" placeholder="Describe the issue..." required></textarea>
+        <div class="formGroup">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" required>
+        </div>
 
-      <button id="submitBtn" type="button">Submit Request</button>
-      <p id="formStatus"></p>
-    </form>
-  </div>
-</section>
+        <div class="formGroup">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@email.com" required>
+        </div>
 
-<!-- FOOTER -->
-<footer>
-  <p><strong>Bateman’s Drains</strong></p>
-  <p>24/7 Emergency Drain & Sewer Service</p>
-  <p>📞 779-399-0185</p>
-</footer>
+        <div class="formGroup">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" name="phone" placeholder="779-399-0185" required>
+        </div>
+
+        <div class="formGroup">
+          <label for="service_area">Service Area (City/Suburb)</label>
+          <input id="service_area" type="text" name="service_area" placeholder="Example: Gurnee / Waukegan / Arlington Heights" required>
+        </div>
+
+        <div class="formGroup">
+          <label for="urgency">Urgency</label>
+          <select id="urgency" name="urgency" required>
+            <option value="">Select</option>
+            <option>Emergency – right now</option>
+            <option>Today</option>
+            <option>1–2 days</option>
+            <option>Not urgent</option>
+          </select>
+        </div>
+
+        <div class="formGroup">
+          <label for="message">Description of work needed</label>
+          <textarea id="message" name="message" placeholder="Example: basement floor drain backing up when washer runs… kitchen sink slow drain… main line clog…" required></textarea>
+        </div>
+
+        <div class="nav" style="margin:0;">
+          <!-- Not a submit button, so the browser never leaves your site -->
+          <button id="submitBtn" class="btn btnPrimary" type="button">Send Request</button>
+          <a class="btn btnSecondary" href="tel:+17793990185">📞 Call Now</a>
+          <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          By submitting, you agree we may contact you about this request.
+        </p>
+
+        <p id="formStatus"></p>
+      </form>
+    </div>
+
+    <div class="card" id="area">
+      <h2>Service Area Map</h2>
+      <p class="small">
+        Serving the Northern Suburbs, Lake County, and Cook County — as far south as Stickney.
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <p class="small" style="margin-top:12px;">
+        Not sure if you're in range? Submit the form and we’ll confirm quickly.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> Bateman’s Drains • 24/7 Emergency Service • 779-399-0185</p>
+  </footer>
+
+</div>
 
 <script>
-const ENDPOINT = "https://formspree.io/f/xqeqydgk";
-const form = document.getElementById("serviceForm");
-const btn = document.getElementById("submitBtn");
-const status = document.getElementById("formStatus");
+  // Footer year
+  document.getElementById("y").textContent = new Date().getFullYear();
 
-btn.addEventListener("click", async () => {
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
+  // Formspree AJAX submit + redirect (works on free plan)
+  const ENDPOINT = "https://formspree.io/f/xqeqydgk";
+  const form = document.getElementById("serviceForm");
+  const btn = document.getElementById("submitBtn");
+  const statusEl = document.getElementById("formStatus");
 
-  btn.disabled = true;
-  btn.textContent = "Sending...";
-
-  try {
-    const res = await fetch(ENDPOINT, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { "Accept": "application/json" }
-    });
-
-    if (res.ok) {
-      window.location.href = "/thank-you.html";
+  btn.addEventListener("click", async () => {
+    // HTML5 validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    status.textContent = "Submission failed. Please call 779-399-0185.";
-  } catch {
-    status.textContent = "Network error. Please call 779-399-0185.";
-  } finally {
-    btn.disabled = false;
-    btn.textContent = "Submit Request";
-  }
-});
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    statusEl.textContent = "";
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        // Your custom thank-you page
+        window.location.href = "https://batemansdrains.com/thank-you.html";
+        return;
+      }
+
+      statusEl.textContent = "Couldn’t submit right now. Please call 779-399-0185.";
+    } catch (e) {
+      statusEl.textContent = "Network error. Please call 779-399-0185.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Send Request";
+    }
+  });
 </script>
 
 </body>
