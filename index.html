@@ -1,421 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bateman’s Drains | 24/7 Emergency Drain & Sewer Service</title>
-  <meta name="description" content="Bateman’s Drains provides fast, honest drain and sewer service across the Northern Suburbs, Lake County, and Cook County (north to Stickney). Call 779-399-0185 for 24/7 emergency service." />
+<title>Bateman’s Drains | 24/7 Emergency Drain & Sewer Service</title>
+<meta name="description" content="Bateman’s Drains provides 24/7 emergency drain and sewer services across Northern Suburbs, Lake County, and Cook County. Call 779-399-0185.">
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#101a33;
-      --text:#e9eefc;
-      --muted:#b9c6ee;
-      --accent:#4da3ff;
-      --accent2:#57e3b4;
-      --danger:#ff4d5a;
-      --line:rgba(255,255,255,.12);
-      --shadow: 0 10px 25px rgba(0,0,0,.35);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(900px 500px at 10% 10%, rgba(77,163,255,.22), transparent 60%),
-        radial-gradient(900px 500px at 90% 30%, rgba(87,227,180,.18), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+<style>
+:root {
+  --bg:#0b1220;
+  --card:#101a33;
+  --accent:#3ea6ff;
+  --text:#e9eefc;
+  --muted:#9fb0d0;
+}
 
-    /* Top bar */
-    .topbar{
-      display:flex;gap:12px;align-items:center;justify-content:space-between;
-      padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);
-      background:rgba(16,26,51,.72); backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      position:sticky; top:12px; z-index:10;
-    }
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display:grid;place-items:center;font-weight:900;color:#07101f;
-      box-shadow:0 10px 25px rgba(77,163,255,.25);
-      user-select:none;
-    }
-    .brand h1{margin:0;font-size:16px;letter-spacing:.2px}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    .ctaRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-    .pill{
-      border:1px solid var(--line);
-      padding:8px 10px;border-radius:999px;
-      color:var(--muted);font-size:12px;
-      background:rgba(0,0,0,.18);
-      white-space:nowrap;
-    }
+* { box-sizing:border-box; }
 
-    /* Buttons */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      border:0;border-radius:14px;padding:10px 14px;
-      font-weight:900; text-decoration:none;
-      box-shadow: var(--shadow);
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btnPrimary{background: linear-gradient(135deg, var(--danger), #ff9a4d); color:#16070a;}
-    .btnSecondary{background: rgba(255,255,255,.10); color:var(--text); border:1px solid var(--line); box-shadow:none;}
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    /* Layout cards */
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:rgba(16,26,51,.55);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:24px;
+}
 
-    /* Hero */
-    .hero{
-      display:grid;grid-template-columns: 1.2fr .8fr;
-      gap:18px; margin-top:18px; align-items:stretch;
-    }
-    .hero h2{margin:0 0 10px;font-size:34px;line-height:1.05}
-    .hero h2 span{background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip:text;background-clip:text;color:transparent;}
-    .lead{color:var(--muted);margin:0 0 14px;font-size:15px}
-    .bigActions{display:flex;gap:10px;flex-wrap:wrap}
-    .bigNumber{
-      margin-top:12px;
-      padding:12px 14px;border-radius:14px;
-      border:1px dashed rgba(255,255,255,.25);
-      color:var(--muted);font-size:13px;
-    }
+header {
+  background:linear-gradient(135deg,#0b1220,#13224a);
+  border-bottom:2px solid var(--accent);
+}
 
-    /* Grids */
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;}
-    .mini{padding:14px}
-    .mini h3{margin:0 0 6px;font-size:14px}
-    .mini p{margin:0;color:var(--muted);font-size:13px}
+header h1 {
+  margin:0;
+  font-size:2.2rem;
+}
 
-    .sectionTitle{margin:26px 0 10px;font-size:18px;letter-spacing:.2px;}
-    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-    .list{margin:0;padding-left:18px;color:var(--muted)}
-    .list li{margin:7px 0}
-    .badgeRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:rgba(0,0,0,.14)}
+header p {
+  margin:8px 0 16px;
+  color:var(--muted);
+}
 
-    /* Form */
-    .form input,.form textarea,.form select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.22);
-      color:var(--text);
-      outline:none;
-      font-size:14px;
-    }
-    .form textarea{min-height:120px;resize:vertical}
-    .form label{display:block;margin:10px 0 6px;color:var(--muted);font-size:12px}
-    .smallNote{margin:10px 0 0;color:var(--muted);font-size:12px}
+.btn {
+  display:inline-block;
+  padding:14px 20px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+  margin-right:10px;
+}
 
-    /* Map */
-    .mapWrap{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.18);
-    }
-    .mapWrap iframe{
-      width:100%;
-      height:340px;
-      border:0;
-      display:block;
-    }
+.btnPrimary {
+  background:var(--accent);
+  color:#000;
+}
 
-    /* Footer */
-    .foot{
-      margin:26px 0 10px;
-      color:var(--muted);
-      font-size:12px;
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      opacity:.9;
-    }
-    .mutedLink{color:var(--muted);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.22)}
+.btnSecondary {
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
 
-    @media (max-width: 880px){
-      .hero{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
-      .hero h2{font-size:30px}
-      .topbar{position:static}
-      .mapWrap iframe{height:300px;}
-    }
-  </style>
+.section {
+  margin-top:48px;
+}
+
+.card {
+  background:var(--card);
+  padding:24px;
+  border-radius:12px;
+  margin-bottom:24px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+@media(max-width:800px){
+  .grid { grid-template-columns:1fr; }
+}
+
+.formGroup {
+  margin-bottom:16px;
+}
+
+.formGroup label {
+  display:block;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:none;
+}
+
+iframe {
+  width:100%;
+  height:420px;
+  border:0;
+  border-radius:12px;
+}
+
+footer {
+  margin-top:48px;
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid #1f2b55;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo">BD</div>
-        <div>
-          <h1>Bateman’s Drains</h1>
-          <p>Drain & Sewer • Emergency Service</p>
-        </div>
-      </div>
-
-      <div class="ctaRow">
-        <div class="pill">✅ Same-day available</div>
-        <a class="btn btnSecondary" href="#services">Services</a>
-        <a class="btn btnSecondary" href="#area">Service Area</a>
-        <a class="btn btnSecondary" href="#contact">Request Service</a>
-        <a class="btn btnPrimary" href="tel:+17793990185">📞 Call Now</a>
-        <a class="btn btnSecondary" href="sms:+17793990185">💬 Text Now</a>
-      </div>
-    </header>
-
-    <main class="hero">
-      <section class="card">
-        <h2><span>Clogged drain?</span> Sewer backing up? We’ll get it flowing.</h2>
-        <p class="lead">
-          Fast, honest help for drains and sewer lines — emergency-first response when water is on the floor.
-        </p>
-
-        <div class="bigActions">
-          <a class="btn btnPrimary" href="tel:+17793990185">📞 Call / Text Now</a>
-          <a class="btn btnSecondary" href="#contact">Request Call Back</a>
-          <a class="btn btnSecondary" href="#services">See Services</a>
-        </div>
-
-        <div class="bigNumber">
-          <strong>Phone:</strong> 779-399-0185 •
-          <strong>Service Area:</strong> Northern Suburbs • Lake County • Cook County (north to Stickney) •
-          <strong>Hours:</strong> 24/7 Emergency
-        </div>
-
-        <div class="grid3">
-          <div class="card mini">
-            <h3>Emergency-first</h3>
-            <p>We prioritize active backups and urgent situations.</p>
-          </div>
-          <div class="card mini">
-            <h3>Up-front & honest</h3>
-            <p>Clear explanation of what’s happening and what it’ll take to fix it.</p>
-          </div>
-          <div class="card mini">
-            <h3>Clean work</h3>
-            <p>Respectful of your home — drop cloths, cleanup, and no mess left behind.</p>
-          </div>
-        </div>
-      </section>
-
-      <aside class="card">
-        <h3 style="margin:0 0 8px;font-size:16px;">What we handle</h3>
-        <ul class="list" style="margin:0 0 10px;">
-          <li>Main sewer line backups</li>
-          <li>Kitchen / bathroom clogs</li>
-          <li>Floor drains & ejector pits</li>
-          <li>Roots & recurring stoppages</li>
-          <li>Camera inspections</li>
-          <li>Preventive clean-outs</li>
-        </ul>
-
-        <div class="badgeRow">
-          <div class="badge">✔ Same-day options</div>
-          <div class="badge">✔ Residential & light commercial</div>
-          <div class="badge">✔ Clean + careful</div>
-        </div>
-
-        <div style="margin-top:14px;border-top:1px solid var(--line);padding-top:14px;">
-          <h3 style="margin:0 0 6px;font-size:16px;">Emergency?</h3>
-          <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
-            If you have water backing up, stop using water fixtures and call now.
-          </p>
-          <a class="btn btnPrimary" style="width:100%;" href="tel:+17793990185">📞 Call Now</a>
-          <a class="btn btnSecondary" style="width:100%;margin-top:10px;" href="sms:+17793990185">💬 Text Now</a>
-        </div>
-      </aside>
-    </main>
-
-    <h3 id="services" class="sectionTitle">Services</h3>
-    <section class="services">
-      <div class="card">
-        <h3 style="margin:0 0 8px;">Drain Cleaning & Rodding</h3>
-        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
-          Clears tough clogs in sinks, tubs, toilets, and main lines — especially recurring stoppages.
-        </p>
-        <ul class="list">
-          <li>Kitchen & bathroom drains</li>
-          <li>Main line rodding</li>
-          <li>Floor drains</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 8px;">Camera Inspection</h3>
-        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
-          See what’s going on inside the pipe — roots, breaks, bellies, grease, and more.
-        </p>
-        <ul class="list">
-          <li>Locate the blockage</li>
-          <li>Confirm the fix</li>
-          <li>Plan repair if needed</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 8px;">Sewer Backups & Emergencies</h3>
-        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
-          Prioritized response for active backups. We’ll restore flow and explain the cause.
-        </p>
-        <ul class="list">
-          <li>Basement backups</li>
-          <li>Root intrusion</li>
-          <li>Recurring issues</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 8px;">Preventive Maintenance</h3>
-        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
-          Avoid surprises with scheduled clean-outs for problem lines.
-        </p>
-        <ul class="list">
-          <li>Routine cleaning</li>
-          <li>Problem line tracking</li>
-          <li>Recommendations that make sense</li>
-        </ul>
-      </div>
-    </section>
-
-    <h3 id="area" class="sectionTitle">Service Area</h3>
-    <section class="split">
-      <div class="card">
-        <h3 style="margin:0 0 8px;">Northern Suburbs • Lake County • Cook County</h3>
-        <p style="margin:0;color:var(--muted);font-size:13px;">
-          Serving the northern suburbs and surrounding areas throughout Lake and Cook County — as far south as Stickney.
-          If you’re not sure if you’re in range, send a request and we’ll confirm.
-        </p>
-        <div class="badgeRow">
-          <div class="badge">Fast response</div>
-          <div class="badge">Same-day options</div>
-          <div class="badge">Residential & light commercial</div>
-        </div>
-        <p class="smallNote">
-          If you want, tell me your “home base” town and I’ll tune this map + add a town list for SEO.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 10px;">Map</h3>
-        <div class="mapWrap">
-          <!-- Centered to show the northern burbs down toward Stickney, without going far south -->
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed">
-          </iframe>
-        </div>
-        <p class="smallNote">
-          Want this tightened or widened? We can adjust the zoom (z=9 is broad; z=10 is tighter).
-        </p>
-      </div>
-    </section>
-
-    <h3 id="contact" class="sectionTitle">Request Service</h3>
-    <section class="card">
-      <p class="lead" style="margin:0 0 12px;">
-        Fill this out and we’ll call/text you back. For active backups, calling is fastest: <strong>779-399-0185</strong>.
-      </p>
-
-      <!-- LIVE Formspree endpoint -->
-      <form class="form" action="https://formspree.io/f/xqeqydgk" method="POST">
-
-        <div class="split">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" placeholder="779-399-0185" required />
-          </div>
-        </div>
-
-        <div class="split">
-          <div>
-            <label for="areaSelect">Service Area</label>
-            <select id="areaSelect" name="service_area" required>
-              <option value="" selected disabled>Select…</option>
-              <option>Northern Suburbs</option>
-              <option>Lake County</option>
-              <option>Cook County</option>
-              <option>Not sure / other</option>
-            </select>
-          </div>
-          <div>
-            <label for="urgency">Urgency</label>
-            <select id="urgency" name="urgency" required>
-              <option value="" selected disabled>Select…</option>
-              <option>Emergency (active backup)</option>
-              <option>Same day</option>
-              <option>Next few days</option>
-              <option>Not urgent</option>
-            </select>
-          </div>
-        </div>
-
-        <label for="work">Description of work needed</label>
-        <textarea id="work" name="work_description" placeholder="Example: basement floor drain backing up when we run the washer… / kitchen sink slow drain… / main line clog…" required></textarea>
-
-        <label for="contactMethod">Preferred contact</label>
-        <select id="contactMethod" name="preferred_contact" required>
-          <option value="" selected disabled>Select…</option>
-          <option>Call</option>
-          <option>Text</option>
-          <option>Either</option>
-        </select>
-
-        <!-- Optional anti-spam honeypot -->
-        <input type="text" name="_gotcha" style="display:none">
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
-          <button class="btn btnPrimary" type="submit">Send Request</button>
-          <a class="btn btnSecondary" href="tel:+17793990185">📞 Call Now</a>
-          <a class="btn btnSecondary" href="sms:+17793990185">💬 Text Now</a>
-        </div>
-
-        <p class="smallNote">
-          After submitting, check your email inbox connected to Formspree to confirm you received the request.
-        </p>
-      </form>
-    </section>
-
-    <footer class="foot">
-      <div>© <span id="y"></span> Bateman’s Drains. All rights reserved.</div>
-      <div>
-        <a class="mutedLink" href="tel:+17793990185">Call</a> ·
-        <a class="mutedLink" href="sms:+17793990185">Text</a> ·
-        <a class="mutedLink" href="#contact">Request Service</a>
-      </div>
-    </footer>
-
+<header>
+  <div class="container">
+    <h1>Bateman’s Drains</h1>
+    <p>24/7 Emergency Drain & Sewer Service</p>
+    <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
+    <a class="btn btnSecondary" href="#contact">Request Service</a>
   </div>
+</header>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<div class="container">
+
+<section class="section card">
+  <h2>Reliable Drain & Sewer Service</h2>
+  <p>
+    Bateman’s Drains provides fast, honest, and professional drain and sewer
+    services for residential and light commercial customers.
+  </p>
+  <p>
+    We proudly service the <strong>Northern Suburbs, Lake County, and Cook County</strong>.
+    Emergency service available 24/7.
+  </p>
+</section>
+
+<section class="section grid">
+
+<div class="card">
+  <h2 id="contact">Request Service</h2>
+
+  <form action="https://formspree.io/f/xqeqydgk" method="POST">
+
+    <input type="hidden" name="_subject" value="New Drain Service Request">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="formGroup">
+      <label>Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="formGroup">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="formGroup">
+      <label>Phone</label>
+      <input type="tel" name="phone" required>
+    </div>
+
+    <div class="formGroup">
+      <label>Service Area (City/Suburb)</label>
+      <input type="text" name="service_area" required>
+    </div>
+
+    <div class="formGroup">
+      <label>Urgency</label>
+      <select name="urgency" required>
+        <option value="">Select</option>
+        <option>Emergency – right now</option>
+        <option>Today</option>
+        <option>1–2 days</option>
+        <option>Not urgent</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label>Description of work needed</label>
+      <textarea name="message" rows="5" required></textarea>
+    </div>
+
+    <button class="btn btnPrimary" type="submit">Send Request</button>
+
+  </form>
+</div>
+
+<div class="card">
+  <h2>Service Area</h2>
+  <iframe
+    src="https://www.google.com/maps?q=North+Chicago+Illinois&z=9&output=embed"
+    loading="lazy">
+  </iframe>
+  <p style="margin-top:12px;">
+    Serving Northern Suburbs, Lake County, and Cook County.
+    Service area extends south to the Stickney area.
+  </p>
+</div>
+
+</section>
+
+</div>
+
+<footer>
+  <p>© 2026 Bateman’s Drains • 24/7 Emergency Service • 779-399-0185</p>
+</footer>
+
 </body>
 </html>
