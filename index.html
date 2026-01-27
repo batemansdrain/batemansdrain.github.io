@@ -38,6 +38,7 @@ header {
   border-bottom:2px solid var(--accent);
 }
 
+/* logo + title row */
 .headerRow{
   display:flex;
   align-items:center;
@@ -48,6 +49,7 @@ header {
 .logo{
   height:72px;
   width:auto;
+  display:block;
 }
 
 header h1 {
@@ -182,8 +184,10 @@ footer {
 
 <header>
   <div class="container">
+
     <div class="headerRow">
-      <img src="logo.png" alt="Bateman’s Drains Logo" class="logo">
+      <!-- LOGO: using flat.png because /logo.png is 404 -->
+      <img src="./flat.png" alt="Bateman’s Drains Logo" class="logo">
       <div>
         <h1>Bateman’s Drains</h1>
         <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
@@ -202,6 +206,7 @@ footer {
       <div class="pill">✅ Residential & light commercial</div>
       <div class="pill">✅ Clean + careful</div>
     </div>
+
   </div>
 </header>
 
@@ -222,6 +227,7 @@ footer {
       <h2 id="contact">Request Service</h2>
       <p class="small">Fill this out and we’ll call or text you shortly. For emergencies, calling is fastest.</p>
 
+      <!-- Form: fetch() submit + redirect to /thank-you.html -->
       <form id="serviceForm" onsubmit="return false;">
         <div class="formGroup">
           <label>Name</label>
@@ -239,7 +245,7 @@ footer {
         </div>
 
         <div class="formGroup">
-          <label>Service Area</label>
+          <label>Service Area (City/Suburb)</label>
           <input type="text" name="service_area" required>
         </div>
 
@@ -271,12 +277,19 @@ footer {
 
     <div class="card" id="area">
       <h2>Service Area Map</h2>
-      <p class="small">Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
+      <p class="small">
+        Serving the Northern Suburbs, Lake County, and Cook County — as far south as Stickney.
+      </p>
 
       <iframe
         src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed"
-        loading="lazy">
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
       </iframe>
+
+      <p class="small" style="margin-top:12px;">
+        Not sure if you're in range? Submit the form and we’ll confirm quickly.
+      </p>
     </div>
   </section>
 
@@ -287,42 +300,43 @@ footer {
 </div>
 
 <script>
-document.getElementById("y").textContent = new Date().getFullYear();
+  document.getElementById("y").textContent = new Date().getFullYear();
 
-const ENDPOINT = "https://formspree.io/f/xqeqydgk";
-const form = document.getElementById("serviceForm");
-const btn = document.getElementById("submitBtn");
-const statusEl = document.getElementById("formStatus");
+  const ENDPOINT = "https://formspree.io/f/xqeqydgk";
+  const form = document.getElementById("serviceForm");
+  const btn = document.getElementById("submitBtn");
+  const statusEl = document.getElementById("formStatus");
 
-btn.addEventListener("click", async () => {
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = "Sending...";
-
-  try {
-    const res = await fetch(ENDPOINT, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { "Accept": "application/json" }
-    });
-
-    if (res.ok) {
-      window.location.href = "/thank-you.html";
+  btn.addEventListener("click", async () => {
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    statusEl.textContent = "Submission failed. Please call 779-399-0185.";
-  } catch {
-    statusEl.textContent = "Network error. Please call 779-399-0185.";
-  } finally {
-    btn.disabled = false;
-    btn.textContent = "Send Request";
-  }
-});
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    statusEl.textContent = "";
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        window.location.href = "/thank-you.html";
+        return;
+      }
+
+      statusEl.textContent = "Submission failed. Please call 779-399-0185.";
+    } catch {
+      statusEl.textContent = "Network error. Please call 779-399-0185.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Send Request";
+    }
+  });
 </script>
 
 </body>
