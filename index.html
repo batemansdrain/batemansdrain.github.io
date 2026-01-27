@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Bateman’s Drains | 24/7 Emergency Drain & Sewer Service</title>
-<meta name="description" content="Bateman’s Drains provides 24/7 emergency drain and sewer services across Northern Suburbs, Lake County, and Cook County. Call 779-399-0185.">
+<meta name="description" content="Bateman’s Drains provides 24/7 emergency drain and sewer services across Northern Suburbs, Lake County, and Cook County (south to Stickney). Call 779-399-0185.">
 
 <style>
 :root {
@@ -14,6 +14,7 @@
   --accent:#3ea6ff;
   --text:#e9eefc;
   --muted:#9fb0d0;
+  --line:rgba(255,255,255,.15);
 }
 
 * { box-sizing:border-box; }
@@ -23,6 +24,7 @@ body {
   font-family:Arial, Helvetica, sans-serif;
   background:var(--bg);
   color:var(--text);
+  line-height:1.45;
 }
 
 .container {
@@ -46,13 +48,19 @@ header p {
   color:var(--muted);
 }
 
+.nav {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
 .btn {
   display:inline-block;
-  padding:14px 20px;
-  border-radius:8px;
+  padding:14px 18px;
+  border-radius:10px;
   font-weight:bold;
   text-decoration:none;
-  margin-right:10px;
 }
 
 .btnPrimary {
@@ -63,31 +71,53 @@ header p {
 .btnSecondary {
   border:2px solid var(--accent);
   color:var(--accent);
+  background:transparent;
 }
 
 .section {
-  margin-top:48px;
+  margin-top:38px;
 }
 
 .card {
   background:var(--card);
   padding:24px;
-  border-radius:12px;
-  margin-bottom:24px;
+  border-radius:14px;
+  border:1px solid var(--line);
 }
 
 .grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;
+  gap:18px;
 }
 
-@media(max-width:800px){
+@media(max-width:900px){
   .grid { grid-template-columns:1fr; }
+  header h1 { font-size:1.9rem; }
+}
+
+.pills {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.pill {
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+}
+
+.small {
+  color:var(--muted);
+  font-size:13px;
 }
 
 .formGroup {
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
 .formGroup label {
@@ -101,23 +131,30 @@ header p {
 .formGroup textarea {
   width:100%;
   padding:12px;
-  border-radius:6px;
-  border:none;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.25);
+  color:var(--text);
+}
+
+.formGroup textarea {
+  min-height:120px;
+  resize:vertical;
 }
 
 iframe {
   width:100%;
   height:420px;
   border:0;
-  border-radius:12px;
+  border-radius:14px;
 }
 
 footer {
-  margin-top:48px;
+  margin-top:46px;
   padding:24px;
   text-align:center;
   color:var(--muted);
-  border-top:1px solid #1f2b55;
+  border-top:1px solid rgba(255,255,255,.12);
 }
 </style>
 </head>
@@ -127,96 +164,120 @@ footer {
 <header>
   <div class="container">
     <h1>Bateman’s Drains</h1>
-    <p>24/7 Emergency Drain & Sewer Service</p>
-    <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
-    <a class="btn btnSecondary" href="#contact">Request Service</a>
+    <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
+
+    <div class="nav">
+      <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
+      <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
+      <a class="btn btnSecondary" href="#contact">Request Service</a>
+      <a class="btn btnSecondary" href="#area">Service Area</a>
+    </div>
+
+    <div class="pills">
+      <div class="pill">✅ Same-day available</div>
+      <div class="pill">✅ Residential & light commercial</div>
+      <div class="pill">✅ Clean + careful</div>
+    </div>
   </div>
 </header>
 
 <div class="container">
 
-<section class="section card">
-  <h2>Reliable Drain & Sewer Service</h2>
-  <p>
-    Bateman’s Drains provides fast, honest, and professional drain and sewer
-    services for residential and light commercial customers.
-  </p>
-  <p>
-    We proudly service the <strong>Northern Suburbs, Lake County, and Cook County</strong>.
-    Emergency service available 24/7.
-  </p>
-</section>
+  <section class="section card">
+    <h2>Fast, honest help when drains stop flowing</h2>
+    <p class="small">
+      If you have water backing up, stop using water fixtures and call now. We prioritize active backups and urgent situations.
+    </p>
+    <p class="small">
+      Services include drain cleaning & rodding, main line backups, camera inspections, and preventive clean-outs.
+    </p>
+  </section>
 
-<section class="section grid">
+  <section class="section grid">
+    <div class="card">
+      <h2 id="contact">Request Service</h2>
+      <p class="small">Fill this out and we’ll call or text you shortly. For emergencies, calling is fastest.</p>
 
-<div class="card">
-  <h2 id="contact">Request Service</h2>
+      <form action="https://formspree.io/f/xqeqydgk" method="POST">
+        <input type="hidden" name="_subject" value="New Drain Service Request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://batemansdrains.com/thank-you.html">
 
-  <form action="https://formspree.io/f/xqeqydgk" method="POST">
+        <div class="formGroup">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
 
-    <input type="hidden" name="_subject" value="New Drain Service Request">
-    <input type="hidden" name="_template" value="table">
+        <div class="formGroup">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@email.com" required>
+        </div>
 
-    <div class="formGroup">
-      <label>Name</label>
-      <input type="text" name="name" required>
+        <div class="formGroup">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="779-399-0185" required>
+        </div>
+
+        <div class="formGroup">
+          <label>Service Area (City/Suburb)</label>
+          <input type="text" name="service_area" placeholder="Example: Gurnee / Waukegan / Arlington Heights" required>
+        </div>
+
+        <div class="formGroup">
+          <label>Urgency</label>
+          <select name="urgency" required>
+            <option value="">Select</option>
+            <option>Emergency – right now</option>
+            <option>Today</option>
+            <option>1–2 days</option>
+            <option>Not urgent</option>
+          </select>
+        </div>
+
+        <div class="formGroup">
+          <label>Description of work needed</label>
+          <textarea name="message" placeholder="Example: basement floor drain backing up when washer runs… kitchen sink slow drain… main line clog…" required></textarea>
+        </div>
+
+        <div class="nav" style="margin:0;">
+          <button class="btn btnPrimary" type="submit">Send Request</button>
+          <a class="btn btnSecondary" href="tel:+17793990185">📞 Call Now</a>
+          <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          By submitting, you agree we may contact you about this request.
+        </p>
+      </form>
     </div>
 
-    <div class="formGroup">
-      <label>Email</label>
-      <input type="email" name="email" required>
+    <div class="card" id="area">
+      <h2>Service Area Map</h2>
+      <p class="small">
+        Serving the Northern Suburbs, Lake County, and Cook County — as far south as Stickney.
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <p class="small" style="margin-top:12px;">
+        Not sure if you're in range? Submit the form and we’ll confirm quickly.
+      </p>
     </div>
+  </section>
 
-    <div class="formGroup">
-      <label>Phone</label>
-      <input type="tel" name="phone" required>
-    </div>
+  <footer>
+    <p>© <span id="y"></span> Bateman’s Drains • 24/7 Emergency Service • 779-399-0185</p>
+  </footer>
 
-    <div class="formGroup">
-      <label>Service Area (City/Suburb)</label>
-      <input type="text" name="service_area" required>
-    </div>
-
-    <div class="formGroup">
-      <label>Urgency</label>
-      <select name="urgency" required>
-        <option value="">Select</option>
-        <option>Emergency – right now</option>
-        <option>Today</option>
-        <option>1–2 days</option>
-        <option>Not urgent</option>
-      </select>
-    </div>
-
-    <div class="formGroup">
-      <label>Description of work needed</label>
-      <textarea name="message" rows="5" required></textarea>
-    </div>
-
-    <button class="btn btnPrimary" type="submit">Send Request</button>
-
-  </form>
 </div>
 
-<div class="card">
-  <h2>Service Area</h2>
-  <iframe
-    src="https://www.google.com/maps?q=North+Chicago+Illinois&z=9&output=embed"
-    loading="lazy">
-  </iframe>
-  <p style="margin-top:12px;">
-    Serving Northern Suburbs, Lake County, and Cook County.
-    Service area extends south to the Stickney area.
-  </p>
-</div>
-
-</section>
-
-</div>
-
-<footer>
-  <p>© 2026 Bateman’s Drains • 24/7 Emergency Service • 779-399-0185</p>
-</footer>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
