@@ -42,20 +42,21 @@ header {
 .headerRow{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:16px;
   flex-wrap:wrap;
 }
 
 .logo{
-  height:54px;
+  height:56px;
   width:auto;
   display:block;
   padding:6px;
   background:rgba(0,0,0,.25);
   border:1px solid rgba(255,255,255,.12);
   border-radius:12px;
+  object-fit:contain;
+  object-position:center;
 }
-
 
 header h1 {
   margin:0;
@@ -113,7 +114,8 @@ header p {
 @media(max-width:900px){
   .grid { grid-template-columns:1fr; }
   header h1 { font-size:1.9rem; }
-  .logo { height:58px; }
+  /* FIX: logo should be smaller on mobile, not bigger */
+  .logo { height:48px; }
 }
 
 .pills {
@@ -191,7 +193,6 @@ footer {
   <div class="container">
 
     <div class="headerRow">
-      <!-- LOGO: using flat.png because /logo.png is 404 -->
       <img src="./logo.png" alt="Bateman’s Drains Logo" class="logo">
 
       <div>
@@ -233,7 +234,6 @@ footer {
       <h2 id="contact">Request Service</h2>
       <p class="small">Fill this out and we’ll call or text you shortly. For emergencies, calling is fastest.</p>
 
-      <!-- Form: fetch() submit + redirect to /thank-you.html -->
       <form id="serviceForm" onsubmit="return false;">
         <div class="formGroup">
           <label>Name</label>
