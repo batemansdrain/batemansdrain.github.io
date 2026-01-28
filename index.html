@@ -42,7 +42,7 @@ body{
 }
 
 .heroInner{
-  max-width:1100px;
+  max-width:1100px; /* match below boxes */
   margin:auto;
   padding:120px 24px 110px;
   display:flex;
@@ -50,7 +50,7 @@ body{
 }
 
 .heroContent{
-  max-width:1100px;
+  max-width:1100px; /* full width like cards */
   width:100%;
   background:rgba(0,0,0,.38);
   backdrop-filter:blur(4px);
@@ -58,7 +58,7 @@ body{
   border-radius:22px;
   padding:44px 48px;
   position:relative;
-  top:-55px;
+  top:-55px; /* raised */
   box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
@@ -75,7 +75,7 @@ body{
 
 .heroTagline{
   margin:16px 0 26px;
-  font-size:1.46rem; /* bumped again */
+  font-size:1.46rem; /* bumped */
   font-weight:800;
   color:#f8fbff;
   text-shadow:0 3px 12px rgba(0,0,0,.8);
@@ -88,6 +88,7 @@ body{
   flex-wrap:wrap;
 }
 
+/* Buttons in hero: +3pts */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -97,7 +98,7 @@ body{
   font-weight:900;
   text-decoration:none;
   white-space:nowrap;
-  font-size:1.05rem;
+  font-size:1.25rem; /* bumped +3pts */
 }
 
 .btnPrimary{
@@ -118,11 +119,12 @@ body{
   margin-top:20px;
 }
 
+/* Badges/checks: +3pts */
 .badge{
-  padding:9px 14px;
+  padding:10px 16px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.16);
-  font-size:13px;
+  font-size:16px; /* bumped +3pts */
   font-weight:700;
   color:#eaf1ff;
   background:rgba(0,0,0,.22);
@@ -161,7 +163,7 @@ h2{
 
 .small{
   color:var(--muted);
-  font-size:17px;
+  font-size:17px; /* bumped */
   line-height:1.55;
 }
 
@@ -174,7 +176,7 @@ label{
   margin-bottom:6px;
   font-weight:800;
   color:#e8f0ff;
-  font-size:17px;
+  font-size:17px; /* bumped */
 }
 
 input,select,textarea{
@@ -184,7 +186,7 @@ input,select,textarea{
   border:1px solid rgba(255,255,255,.16);
   background:rgba(0,0,0,.25);
   color:#fff;
-  font-size:17px;
+  font-size:17px; /* bumped */
 }
 
 textarea{
@@ -216,7 +218,7 @@ footer{
   border-top:1px solid rgba(255,255,255,.12);
 }
 
-/* ================= MOBILE (keep PERFECT like you said) ================= */
+/* ================= MOBILE (keep PERFECT) ================= */
 
 @media(max-width:900px){
   .heroHeader{
@@ -238,19 +240,25 @@ footer{
   }
 
   .heroTagline{
-    font-size:1.27rem; /* bumped twice, mobile-safe */
+    font-size:1.27rem;
   }
 
+  /* Hero buttons slightly smaller on mobile */
   .btn{
     padding:14px 18px;
-    font-size:1rem;
+    font-size:1.1rem;
+  }
+
+  .badge{
+    font-size:14px;
+    padding:9px 14px;
   }
 
   .grid{
     grid-template-columns:1fr;
   }
 
-  /* Mobile: keep bottom boxes the old perfect sizing */
+  /* Mobile: keep bottom boxes sizing perfect */
   h2{ font-size:1.9rem; margin:0 0 10px; }
   .small{ font-size:14px; line-height:1.45; }
   label{ font-size:14px; }
