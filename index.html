@@ -10,7 +10,7 @@
 <style>
 :root{
   --bg:#0b1220;
-  --card:#0f1a33;
+  --card:#101a33;
   --accent:#3ea6ff;
   --text:#ffffff;
   --muted:#b9c7e6;
@@ -27,64 +27,78 @@ body{
   line-height:1.5;
 }
 
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 24px;
+}
+
 /* ================= HERO ================= */
 
-header{
+.heroHeader{
+  position:relative;
+  min-height:86vh;
+  border-bottom:2px solid var(--accent);
   background:
-    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55)),
+    linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.55)),
     url("./hero.jpg");
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center top;
-  border-bottom:2px solid var(--accent);
 }
 
-.hero{
+.heroInner{
   max-width:1200px;
   margin:auto;
   padding:120px 24px 110px;
+  display:flex;
+  align-items:flex-start;
 }
 
-.heroBox{
-  max-width:760px;
+.heroContent{
+  max-width:780px;
   background:rgba(0,0,0,.35);
   backdrop-filter:blur(3px);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
-  padding:28px 32px;
+  padding:32px;
 }
 
-.hero h1{
+.heroTitle{
   margin:0;
-  font-size:2.6rem;
+  font-size:2.8rem;
   font-weight:900;
-  letter-spacing:.4px;
+  letter-spacing:.5px;
+  color:#fff;
   text-shadow:
-    0 3px 12px rgba(0,0,0,.8),
+    0 3px 14px rgba(0,0,0,.85),
     0 0 1px rgba(0,0,0,.9);
 }
 
-.hero p{
-  margin:14px 0 24px;
-  font-size:1.1rem;
-  font-weight:600;
-  color:#f2f6ff;
-  text-shadow:0 2px 8px rgba(0,0,0,.7);
+.heroTagline{
+  margin:16px 0 26px;
+  font-size:1.15rem;
+  font-weight:700;
+  color:#f5f8ff;
+  text-shadow:0 2px 10px rgba(0,0,0,.75);
+  line-height:1.5;
 }
 
-.heroActions{
+.heroButtons{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:14px 20px;
-  border-radius:12px;
-  font-weight:800;
-  text-decoration:none;
   display:inline-flex;
   align-items:center;
   gap:8px;
+  padding:14px 20px;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  white-space:nowrap;
 }
 
 .btnPrimary{
@@ -94,7 +108,7 @@ header{
 
 .btnSecondary{
   border:2px solid var(--accent);
-  background:rgba(0,0,0,.4);
+  background:rgba(0,0,0,.40);
   color:#fff;
 }
 
@@ -108,18 +122,13 @@ header{
 .badge{
   padding:8px 12px;
   border-radius:999px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.16);
   font-size:13px;
-  background:rgba(0,0,0,.25);
+  color:#eaf1ff;
+  background:rgba(0,0,0,.22);
 }
 
 /* ================= CONTENT ================= */
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 24px;
-}
 
 .section{
   margin-top:38px;
@@ -139,7 +148,7 @@ header{
 }
 
 h2{
-  margin-top:0;
+  margin:0 0 10px;
   font-size:1.9rem;
 }
 
@@ -155,14 +164,15 @@ h2{
 label{
   display:block;
   margin-bottom:6px;
-  font-weight:700;
+  font-weight:800;
+  color:#e8f0ff;
 }
 
 input,select,textarea{
   width:100%;
   padding:12px;
   border-radius:10px;
-  border:1px solid var(--line);
+  border:1px solid rgba(255,255,255,.16);
   background:rgba(0,0,0,.25);
   color:#fff;
 }
@@ -191,24 +201,33 @@ iframe{
 
 footer{
   text-align:center;
-  padding:30px;
+  padding:30px 24px;
   color:var(--muted);
-  border-top:1px solid var(--line);
+  border-top:1px solid rgba(255,255,255,.12);
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:900px){
-  header{
-    background-position:center center;
+  .heroHeader{
+    min-height:78vh;
+    background-position:center center; /* mobile even framing */
   }
 
-  .hero{
+  .heroInner{
     padding:90px 18px 80px;
   }
 
-  .hero h1{
+  .heroContent{
+    padding:26px;
+  }
+
+  .heroTitle{
     font-size:2.05rem;
+  }
+
+  .heroTagline{
+    font-size:1rem;
   }
 
   .grid{
@@ -220,15 +239,16 @@ footer{
 
 <body>
 
-<header>
-  <div class="hero">
-    <div class="heroBox">
-      <h1>Bateman’s Drains</h1>
-      <p>
-        24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)
+<header class="heroHeader">
+  <div class="heroInner">
+    <div class="heroContent">
+      <h1 class="heroTitle">Bateman’s Drains</h1>
+      <p class="heroTagline">
+        24/7 Emergency Drain &amp; Sewer Service<br>
+        Northern Suburbs • Lake County • Cook County (south to Stickney)
       </p>
 
-      <div class="heroActions">
+      <div class="heroButtons">
         <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
         <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
         <a class="btn btnSecondary" href="#contact">Request Service</a>
@@ -236,9 +256,9 @@ footer{
       </div>
 
       <div class="heroBadges">
-        <div class="badge">✅ Same-day available</div>
-        <div class="badge">✅ Residential & light commercial</div>
-        <div class="badge">✅ Clean & careful</div>
+        <span class="badge">✅ Same-day available</span>
+        <span class="badge">✅ Residential &amp; light commercial</span>
+        <span class="badge">✅ Clean &amp; careful</span>
       </div>
     </div>
   </div>
@@ -252,7 +272,7 @@ footer{
       If you have water backing up, stop using water fixtures and call now. We prioritize active backups and urgent situations.
     </p>
     <p class="small">
-      Services include drain cleaning & rodding, main line backups, camera inspections, and preventive clean-outs.
+      Services include drain cleaning &amp; rodding, main line backups, camera inspections, and preventive clean-outs.
     </p>
   </section>
 
@@ -298,7 +318,7 @@ footer{
           <textarea name="message" required></textarea>
         </div>
 
-        <div class="heroActions">
+        <div class="heroButtons">
           <button id="submitBtn" class="btn btnPrimary" type="button">Send Request</button>
           <a class="btn btnSecondary" href="tel:+17793990185">📞 Call</a>
           <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
@@ -355,17 +375,17 @@ btn.addEventListener("click", async () => {
       headers:{ "Accept":"application/json" }
     });
 
-    if(res.ok){
-      window.location.href="/thank-you.html";
+    if (res.ok) {
+      window.location.href = "/thank-you.html";
       return;
     }
 
-    statusEl.textContent="Submission failed. Please call 779-399-0185.";
+    statusEl.textContent = "Submission failed. Please call 779-399-0185.";
   } catch {
-    statusEl.textContent="Network error. Please call 779-399-0185.";
+    statusEl.textContent = "Network error. Please call 779-399-0185.";
   } finally {
-    btn.disabled=false;
-    btn.textContent="Send Request";
+    btn.disabled = false;
+    btn.textContent = "Send Request";
   }
 });
 </script>
