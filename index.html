@@ -31,29 +31,26 @@ body{
 
 .heroHeader{
   position:relative;
-  min-height:88vh; /* taller */
+  min-height:88vh;
   border-bottom:2px solid var(--accent);
-
-  /* lighter overlay so image shows */
   background:
     linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.55)),
     url("./hero.jpg");
   background-size:cover;
   background-repeat:no-repeat;
-
-  /* desktop framing */
-  background-position:center 18%;
+  background-position:center 18%; /* desktop framing */
 }
 
 .heroInner{
-  max-width:1100px;     /* same as page container */
+  max-width:1100px; /* match the cards below */
   margin:auto;
-  padding:120px 24px 110px; /* keep your height exactly */
+  padding:120px 24px 110px;
   display:flex;
   justify-content:center;
 }
+
 .heroContent{
-  max-width:1100px;   /* match the cards below */
+  max-width:1100px; /* same width as below */
   width:100%;
   background:rgba(0,0,0,.38);
   backdrop-filter:blur(4px);
@@ -61,13 +58,13 @@ body{
   border-radius:22px;
   padding:44px 48px;
   position:relative;
-  top:-55px;                       /* raise box */
+  top:-55px; /* raised */
   box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
 .heroTitle{
   margin:0;
-  font-size:2.9rem;
+  font-size:3.05rem; /* bumped ~2pt */
   font-weight:900;
   letter-spacing:.5px;
   color:#fff;
@@ -78,8 +75,8 @@ body{
 
 .heroTagline{
   margin:16px 0 26px;
-  font-size:1.12rem;
-  font-weight:700;
+  font-size:1.22rem; /* bumped ~2pt */
+  font-weight:750;
   color:#f5f8ff;
   text-shadow:0 2px 10px rgba(0,0,0,.75);
   line-height:1.5;
@@ -95,7 +92,7 @@ body{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:16px 22px;        /* bigger buttons */
+  padding:16px 22px;
   border-radius:12px;
   font-weight:900;
   text-decoration:none;
@@ -220,7 +217,7 @@ footer{
 @media(max-width:900px){
   .heroHeader{
     min-height:78vh;
-    background-position:center center; /* mobile even framing */
+    background-position:center center;
   }
 
   .heroInner{
@@ -228,17 +225,16 @@ footer{
   }
 
   .heroContent{
-    max-width:100%;
     padding:28px 24px;
     top:-20px;
   }
 
   .heroTitle{
-    font-size:2.15rem;
+    font-size:2.25rem;
   }
 
   .heroTagline{
-    font-size:1rem;
+    font-size:1.05rem;
   }
 
   .btn{
