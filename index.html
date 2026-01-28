@@ -42,7 +42,7 @@ body{
 }
 
 .heroInner{
-  max-width:1100px; /* match the cards below */
+  max-width:1100px;
   margin:auto;
   padding:120px 24px 110px;
   display:flex;
@@ -50,7 +50,7 @@ body{
 }
 
 .heroContent{
-  max-width:1100px; /* same width as below */
+  max-width:1100px;
   width:100%;
   background:rgba(0,0,0,.38);
   backdrop-filter:blur(4px);
@@ -58,13 +58,13 @@ body{
   border-radius:22px;
   padding:44px 48px;
   position:relative;
-  top:-55px; /* raised */
+  top:-55px;
   box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
 .heroTitle{
   margin:0;
-  font-size:3.05rem; /* bumped ~2pt */
+  font-size:3.05rem;
   font-weight:900;
   letter-spacing:.5px;
   color:#fff;
@@ -75,13 +75,12 @@ body{
 
 .heroTagline{
   margin:16px 0 26px;
-  font-size:1.46rem;  /* +2 more pts */
-  font-weight:800;     /* slightly bolder for clarity */
+  font-size:1.46rem; /* bumped again */
+  font-weight:800;
   color:#f8fbff;
   text-shadow:0 3px 12px rgba(0,0,0,.8);
   line-height:1.5;
 }
-
 
 .heroButtons{
   display:flex;
@@ -154,17 +153,19 @@ body{
   gap:22px;
 }
 
+/* Desktop bump (+3pts feel) */
 h2{
-  margin:0 0 10px;
-  font-size:1.9rem;
+  margin:0 0 12px;
+  font-size:2.1rem;
 }
 
 .small{
   color:var(--muted);
-  font-size:14px;
+  font-size:17px;
+  line-height:1.55;
 }
 
-/* ================= FORM ================= */
+/* ================= FORM (Desktop bumped) ================= */
 
 .formGroup{margin-bottom:14px}
 
@@ -173,6 +174,7 @@ label{
   margin-bottom:6px;
   font-weight:800;
   color:#e8f0ff;
+  font-size:17px;
 }
 
 input,select,textarea{
@@ -182,6 +184,7 @@ input,select,textarea{
   border:1px solid rgba(255,255,255,.16);
   background:rgba(0,0,0,.25);
   color:#fff;
+  font-size:17px;
 }
 
 textarea{
@@ -213,7 +216,7 @@ footer{
   border-top:1px solid rgba(255,255,255,.12);
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE (keep PERFECT like you said) ================= */
 
 @media(max-width:900px){
   .heroHeader{
@@ -234,10 +237,9 @@ footer{
     font-size:2.25rem;
   }
 
- .heroTagline{
- font-size:1.15rem; /* mobile +2pts */
-}
-
+  .heroTagline{
+    font-size:1.27rem; /* bumped twice, mobile-safe */
+  }
 
   .btn{
     padding:14px 18px;
@@ -247,6 +249,12 @@ footer{
   .grid{
     grid-template-columns:1fr;
   }
+
+  /* Mobile: keep bottom boxes the old perfect sizing */
+  h2{ font-size:1.9rem; margin:0 0 10px; }
+  .small{ font-size:14px; line-height:1.45; }
+  label{ font-size:14px; }
+  input,select,textarea{ font-size:14px; }
 }
 </style>
 </head>
