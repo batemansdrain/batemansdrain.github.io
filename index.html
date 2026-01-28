@@ -8,169 +8,212 @@
 <meta name="description" content="Bateman’s Drains provides 24/7 emergency drain and sewer services across Northern Suburbs, Lake County, and Cook County (south to Stickney). Call 779-399-0185.">
 
 <style>
-:root {
+:root{
   --bg:#0b1220;
-  --card:#101a33;
+  --card:#0f1a33;
   --accent:#3ea6ff;
-  --text:#e9eefc;
-  --muted:#9fb0d0;
-  --line:rgba(255,255,255,.15);
+  --text:#ffffff;
+  --muted:#b9c7e6;
+  --line:rgba(255,255,255,.14);
 }
 
-* { box-sizing:border-box; }
+*{box-sizing:border-box}
 
-body {
+body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.45;
+  line-height:1.5;
 }
 
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:24px;
-}
+/* ================= HERO ================= */
 
-/* HERO HEADER (taller + lighter overlay so image shows) */
-header {
-  border-bottom:2px solid var(--accent);
+header{
   background:
-    linear-gradient(135deg, rgba(11,18,32,.45), rgba(19,34,74,.45)),
+    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55)),
     url("./hero.jpg");
   background-size:cover;
-  background-position:center;
   background-repeat:no-repeat;
-  padding:80px 0 90px; /* makes hero taller */
+  background-position:center top;
+  border-bottom:2px solid var(--accent);
 }
 
-header h1 {
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 24px 110px;
+}
+
+.heroBox{
+  max-width:760px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(3px);
+  border-radius:18px;
+  padding:28px 32px;
+}
+
+.hero h1{
   margin:0;
-  font-size:2.2rem;
+  font-size:2.6rem;
+  font-weight:900;
+  letter-spacing:.4px;
+  text-shadow:
+    0 3px 12px rgba(0,0,0,.8),
+    0 0 1px rgba(0,0,0,.9);
 }
 
-header p {
-  margin:8px 0 16px;
-  color:rgba(233,238,252,.88);
+.hero p{
+  margin:14px 0 24px;
+  font-size:1.1rem;
+  font-weight:600;
+  color:#f2f6ff;
+  text-shadow:0 2px 8px rgba(0,0,0,.7);
 }
 
-.nav {
+.heroActions{
   display:flex;
-  gap:10px;
+  gap:12px;
   flex-wrap:wrap;
-  margin-bottom:14px;
 }
 
-.btn {
-  display:inline-block;
-  padding:14px 18px;
-  border-radius:10px;
-  font-weight:bold;
+.btn{
+  padding:14px 20px;
+  border-radius:12px;
+  font-weight:800;
   text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
 
-.btnPrimary {
+.btnPrimary{
   background:var(--accent);
   color:#000;
 }
 
-.btnSecondary {
+.btnSecondary{
   border:2px solid var(--accent);
-  color:#e9eefc;
-  background:rgba(0,0,0,.15);
+  background:rgba(0,0,0,.4);
+  color:#fff;
 }
 
-.section {
+.heroBadges{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.badge{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:13px;
+  background:rgba(0,0,0,.25);
+}
+
+/* ================= CONTENT ================= */
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 24px;
+}
+
+.section{
   margin-top:38px;
 }
 
-.card {
+.card{
   background:var(--card);
-  padding:24px;
-  border-radius:14px;
+  border-radius:18px;
+  padding:28px;
   border:1px solid var(--line);
 }
 
-.grid {
+.grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
+  gap:22px;
 }
 
-@media(max-width:900px){
-  .grid { grid-template-columns:1fr; }
-  header h1 { font-size:1.9rem; }
-  header { padding:60px 0 70px; } /* mobile hero height */
+h2{
+  margin-top:0;
+  font-size:1.9rem;
 }
 
-.pills {
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
-
-.pill {
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  color:rgba(233,238,252,.88);
-  font-size:12px;
-  background:rgba(0,0,0,.18);
-}
-
-.small {
+.small{
   color:var(--muted);
-  font-size:13px;
+  font-size:14px;
 }
 
-.formGroup {
-  margin-bottom:14px;
-}
+/* ================= FORM ================= */
 
-.formGroup label {
+.formGroup{margin-bottom:14px}
+
+label{
   display:block;
   margin-bottom:6px;
-  font-weight:bold;
-  color:#d7e2ff;
+  font-weight:700;
 }
 
-.formGroup input,
-.formGroup select,
-.formGroup textarea {
+input,select,textarea{
   width:100%;
   padding:12px;
   border-radius:10px;
-  border:1px solid rgba(255,255,255,.12);
+  border:1px solid var(--line);
   background:rgba(0,0,0,.25);
-  color:var(--text);
+  color:#fff;
 }
 
-.formGroup textarea {
+textarea{
   min-height:120px;
   resize:vertical;
 }
 
-iframe {
+#formStatus{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ================= MAP ================= */
+
+iframe{
   width:100%;
   height:420px;
   border:0;
   border-radius:14px;
 }
 
-footer {
-  margin-top:46px;
-  padding:24px;
+/* ================= FOOTER ================= */
+
+footer{
   text-align:center;
+  padding:30px;
   color:var(--muted);
-  border-top:1px solid rgba(255,255,255,.12);
+  border-top:1px solid var(--line);
 }
 
-#formStatus{
-  margin-top:12px;
-  color:var(--muted);
-  font-size:13px;
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+  header{
+    background-position:center center;
+  }
+
+  .hero{
+    padding:90px 18px 80px;
+  }
+
+  .hero h1{
+    font-size:2.05rem;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -178,28 +221,32 @@ footer {
 <body>
 
 <header>
-  <div class="container">
-    <h1>Bateman’s Drains</h1>
-    <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
+  <div class="hero">
+    <div class="heroBox">
+      <h1>Bateman’s Drains</h1>
+      <p>
+        24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)
+      </p>
 
-    <div class="nav">
-      <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
-      <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
-      <a class="btn btnSecondary" href="#contact">Request Service</a>
-      <a class="btn btnSecondary" href="#area">Service Area</a>
-    </div>
+      <div class="heroActions">
+        <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
+        <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
+        <a class="btn btnSecondary" href="#contact">Request Service</a>
+        <a class="btn btnSecondary" href="#area">Service Area</a>
+      </div>
 
-    <div class="pills">
-      <div class="pill">✅ Same-day available</div>
-      <div class="pill">✅ Residential & light commercial</div>
-      <div class="pill">✅ Clean + careful</div>
+      <div class="heroBadges">
+        <div class="badge">✅ Same-day available</div>
+        <div class="badge">✅ Residential & light commercial</div>
+        <div class="badge">✅ Clean & careful</div>
+      </div>
     </div>
   </div>
 </header>
 
 <div class="container">
 
-  <section class="section card">
+  <section class="card">
     <h2>Fast, honest help when drains stop flowing</h2>
     <p class="small">
       If you have water backing up, stop using water fixtures and call now. We prioritize active backups and urgent situations.
@@ -251,7 +298,7 @@ footer {
           <textarea name="message" required></textarea>
         </div>
 
-        <div class="nav" style="margin:0;">
+        <div class="heroActions">
           <button id="submitBtn" class="btn btnPrimary" type="button">Send Request</button>
           <a class="btn btnSecondary" href="tel:+17793990185">📞 Call</a>
           <a class="btn btnSecondary" href="sms:+17793990185">💬 Text</a>
@@ -269,8 +316,7 @@ footer {
 
       <iframe
         src="https://www.google.com/maps?q=Des%20Plaines%20IL&z=9&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        loading="lazy">
       </iframe>
 
       <p class="small" style="margin-top:12px;">
@@ -279,50 +325,49 @@ footer {
     </div>
   </section>
 
-  <footer>
-    <p>© <span id="y"></span> Bateman’s Drains • 24/7 Emergency Service • 779-399-0185</p>
-  </footer>
-
 </div>
 
+<footer>
+  © <span id="y"></span> Bateman’s Drains • 24/7 Emergency Service • 779-399-0185
+</footer>
+
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("y").textContent = new Date().getFullYear();
 
-  const ENDPOINT = "https://formspree.io/f/xqeqydgk";
-  const form = document.getElementById("serviceForm");
-  const btn = document.getElementById("submitBtn");
-  const statusEl = document.getElementById("formStatus");
+const ENDPOINT = "https://formspree.io/f/xqeqydgk";
+const form = document.getElementById("serviceForm");
+const btn = document.getElementById("submitBtn");
+const statusEl = document.getElementById("formStatus");
 
-  btn.addEventListener("click", async () => {
-    if (!form.checkValidity()) {
-      form.reportValidity();
+btn.addEventListener("click", async () => {
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  try {
+    const res = await fetch(ENDPOINT, {
+      method:"POST",
+      body:new FormData(form),
+      headers:{ "Accept":"application/json" }
+    });
+
+    if(res.ok){
+      window.location.href="/thank-you.html";
       return;
     }
 
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-    statusEl.textContent = "";
-
-    try {
-      const res = await fetch(ENDPOINT, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      });
-
-      if (res.ok) {
-        window.location.href = "/thank-you.html";
-        return;
-      }
-
-      statusEl.textContent = "Submission failed. Please call 779-399-0185.";
-    } catch {
-      statusEl.textContent = "Network error. Please call 779-399-0185.";
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Send Request";
-    }
-  });
+    statusEl.textContent="Submission failed. Please call 779-399-0185.";
+  } catch {
+    statusEl.textContent="Network error. Please call 779-399-0185.";
+  } finally {
+    btn.disabled=false;
+    btn.textContent="Send Request";
+  }
+});
 </script>
 
 </body>
