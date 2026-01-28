@@ -33,29 +33,15 @@ body {
   padding:24px;
 }
 
+/* HERO HEADER (uses hero.jpg) */
 header {
-  background:linear-gradient(135deg,#0b1220,#13224a);
   border-bottom:2px solid var(--accent);
-}
-
-/* logo + title row */
-.headerRow{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.logo{
-  height:56px;
-  width:auto;
-  display:block;
-  padding:6px;
-  background:rgba(0,0,0,.25);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-  object-fit:contain;
-  object-position:center;
+  background:
+    linear-gradient(135deg, rgba(11,18,32,.78), rgba(19,34,74,.78)),
+    url("./hero.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 header h1 {
@@ -114,8 +100,6 @@ header p {
 @media(max-width:900px){
   .grid { grid-template-columns:1fr; }
   header h1 { font-size:1.9rem; }
-  /* FIX: logo should be smaller on mobile, not bigger */
-  .logo { height:48px; }
 }
 
 .pills {
@@ -191,15 +175,8 @@ footer {
 
 <header>
   <div class="container">
-
-    <div class="headerRow">
-      <img src="./logo.png" alt="Bateman’s Drains Logo" class="logo">
-
-      <div>
-        <h1>Bateman’s Drains</h1>
-        <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
-      </div>
-    </div>
+    <h1>Bateman’s Drains</h1>
+    <p>24/7 Emergency Drain & Sewer Service • Northern Suburbs • Lake County • Cook County (south to Stickney)</p>
 
     <div class="nav">
       <a class="btn btnPrimary" href="tel:+17793990185">📞 Call 779-399-0185</a>
@@ -213,7 +190,6 @@ footer {
       <div class="pill">✅ Residential & light commercial</div>
       <div class="pill">✅ Clean + careful</div>
     </div>
-
   </div>
 </header>
 
